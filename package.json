@@ -9,7 +9,6 @@
     "format": "npx prettier . --write"
   },
   "keywords": [],
-  "type": "module",
   "author": "",
   "license": "ISC",
   "description": "",
