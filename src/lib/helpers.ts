@@ -20,9 +20,6 @@ export const extractMetadata = (html: string) => {
 };
 
 export const addProtocolIfMissing = (url: string): string => {
-
-	if (!/^http?:\/\//i.test(url) || !/^https?:\/\//i.test(url)) {
-		return `https://${url}`;
-	}
-	return url;
+	const cleanUrl = url.replace(/^https?:\/\//i, '');
+	return `https://${cleanUrl}`;
 };

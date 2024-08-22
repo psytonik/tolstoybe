@@ -22,6 +22,7 @@ router.post('/', async (req:Request,res: Response) => {
 	}
 
 	const metadataPromise = urls.map(async (url: string): Promise<MetadataResult> => {
+
 		const normalizedUrl: string = addProtocolIfMissing(url);
 		try {
 			const response = await axios.get(normalizedUrl);
