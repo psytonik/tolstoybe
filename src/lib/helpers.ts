@@ -4,13 +4,13 @@ export interface Metadata {
 	image: string,
 }
 export const extractMetadata = (html: string) => {
-
+	console.log(html)
 	const metadata: Metadata = { title:'', description:'', image:'' };
 
-	const titleMatch = html.match(/<title>(.*?)<\/title>/);
+	const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/);
 	metadata.title = titleMatch ? titleMatch[1] : 'No title found';
 
-	const descriptionMatch = html.match(/<meta\s+name=["']description["']\s+content=["'](.*?)["']\s*\/?>/);
+	const descriptionMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["'](.*?)["'][^>]*>/i);
 	metadata.description = descriptionMatch ? descriptionMatch[1] : 'No description found';
 
 	const imageMatch = html.match(/<meta\s+property=["']og:image["']\s+content=["'](.*?)["']\s*\/?>/);
