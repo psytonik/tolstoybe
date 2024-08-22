@@ -4,7 +4,7 @@ export interface Metadata {
 	image: string,
 }
 export const extractMetadata = (html: string) => {
-	console.log(html)
+
 	const metadata: Metadata = { title:'', description:'', image:'' };
 
 	const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/);
