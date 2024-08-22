@@ -1,9 +1,11 @@
-export interface Metadata {
-	title: string,
-	description: string,
-	image: string,
-}
-export const extractMetadata = (html: string) => {
+import {Metadata} from "../interfaces/metadata.interface";
+
+export const addProtocolIfMissing = (url: string): string => {
+	const cleanUrl = url.replace(/^https?:\/\//i, '');
+	return `https://${cleanUrl}`;
+};
+
+export const extractMetadata = (html: string): Metadata => {
 
 	const metadata: Metadata = { title:'', description:'', image:'' };
 
@@ -19,7 +21,3 @@ export const extractMetadata = (html: string) => {
 	return metadata;
 };
 
-export const addProtocolIfMissing = (url: string): string => {
-	const cleanUrl = url.replace(/^https?:\/\//i, '');
-	return `https://${cleanUrl}`;
-};

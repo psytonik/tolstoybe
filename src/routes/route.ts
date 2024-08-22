@@ -1,17 +1,8 @@
 import {Router,Request,Response} from 'express'
 import axios from "axios";
 import {addProtocolIfMissing, extractMetadata} from "../lib/helpers";
+import {Metadata, MetadataResult} from "../interfaces/metadata.interface";
 
-interface Metadata {
-	title: string;
-	description: string;
-	image: string;
-}
-interface MetadataResult {
-	url: string;
-	metadata?: Metadata;
-	error?: string;
-}
 
 const router: Router = Router();
 
