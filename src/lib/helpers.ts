@@ -1,4 +1,4 @@
-import {Metadata} from "../interfaces/metadata.interface";
+import { Metadata } from "../interfaces/metadata.interface";
 
 export const addProtocolIfMissing = (url: string): string => {
 	const cleanUrl = url.replace(/^https?:\/\//i, '');
