@@ -111,5 +111,5 @@
     "./src/**/*",
     "**/*.spec.ts",
   ],
-  "exclude": ["**/*.test.ts","node_modules","build"]
+//  "exclude": ["**/*.test.ts","node_modules","build"]
 }
