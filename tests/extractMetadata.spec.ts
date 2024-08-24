@@ -42,9 +42,12 @@ describe("extractMetadata", () => {
 		expect(response.body.map((data:Metadata) => data)).toBeDefined();
 		const res =  response.body.map((data:MetadataResult) => data.url)
 		expect(res).toEqual(["https://anthonyfink.dev"])
-		expect(response.body.metadata[0]).toHaveProperty('title', 'Example Title');
-		expect(response.body.metadata[0]).toHaveProperty('description', 'Example Description');
-		expect(response.body.metadata[0]).toHaveProperty('image', 'https://example.com/image.jpg');
+
+		const firstItem = response.body[0];
+		expect(firstItem).toHaveProperty('url', 'https://anthonyfink.dev');
+		expect(firstItem.metadata).toHaveProperty('title', 'Example Title');
+		expect(firstItem.metadata).toHaveProperty('description', 'Example Description');
+		expect(firstItem.metadata).toHaveProperty('image', 'https://example.com/image.jpg');
 	})
 })
 
