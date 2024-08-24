@@ -14,7 +14,7 @@ Here's a refined version for your GitHub documentation:
     - Set the language to `Node`.
     - Choose the `Main` branch.
     - Enter the following Build Command: `npm install && npm run build`.
-    - Enter the following Start Command: `npm run start build/app.js`.
+    - Enter the following Start Command: `npm run start build/src/app.js`.
 
 4. **Set Environment Variables**:
     - Add `PORT` with a value of `5001`.
