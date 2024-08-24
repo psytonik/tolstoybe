@@ -15,7 +15,6 @@ app.use(urlencoded({ extended: true }));
 const limiter: RateLimitRequestHandler = rateLimit({
 	windowMs: 1000,
 	limit: 5,
-	legacyHeaders: false,
 });
 
 app.use(limiter);
