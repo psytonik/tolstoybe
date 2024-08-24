@@ -6,7 +6,7 @@ export const addProtocolIfMissing = (url: string): string => {
 };
 
 export const extractMetadata = (html: string): Metadata => {
-	console.log(html);
+
 	const metadata: Metadata = { title:'', description:'', image:'' };
 
 	const titleMatch = html.match(/<title[^>]*>(.*?)<\/title>/);
