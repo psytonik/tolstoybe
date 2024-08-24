@@ -3,9 +3,9 @@ export interface Metadata {
 	description: string,
 	image: string,
 }
-
 export interface MetadataResult {
 	url: string;
 	metadata?: Metadata;
 	error?: string;
 }
+
