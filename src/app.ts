@@ -22,7 +22,9 @@ app.use(limiter);
 
 app.use('/',router);
 
-app.listen(PORT, (): void => {
-	console.log(`Server is running on port ${PORT}`);
-})
+if (process.env.NODE_ENV !== 'test') {
+	app.listen(PORT, (): void => {
+		console.log(`Server is running on port ${PORT}`);
+	});
+}
 export default app;

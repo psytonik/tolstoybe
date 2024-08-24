@@ -5,6 +5,18 @@ import axios from "axios";
 import {Metadata, MetadataResult} from "interfaces/metadata.interface";
 
 const mock = new MockAdapter(axios);
+let server: any;
+
+beforeAll((done) => {
+	server = app.listen(0, () => {
+		console.log('server run')
+		done();
+	});
+});
+
+afterAll((done) => {
+	server.close(done);
+});
 
 describe("extractMetadata", () => {
 	afterEach(() => {
