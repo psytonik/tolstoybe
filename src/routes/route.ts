@@ -1,6 +1,6 @@
 import {Router,Request,Response} from 'express'
 import axios from "axios";
-import {addProtocolIfMissing, extractMetadata} from "../lib/helpers";
+import {addProtocolIfMissing, completeImageUrl, extractMetadata} from "../lib/helpers";
 import {Metadata, MetadataResult} from "../interfaces/metadata.interface";
 
 
@@ -18,7 +18,8 @@ router.post('/', async (req:Request,res: Response) => {
 		try {
 			const response = await axios.get(normalizedUrl);
 			const html = await response.data;
-			const metadata: Metadata = extractMetadata(html);
+			let metadata: Metadata = extractMetadata(html);
+			metadata.image = completeImageUrl(normalizedUrl,metadata.image)
 			return { url: normalizedUrl, metadata };
 
 		}catch(err){

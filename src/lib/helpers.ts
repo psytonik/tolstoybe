@@ -21,3 +21,14 @@ export const extractMetadata = (html: string): Metadata => {
 	return metadata;
 };
 
+export const completeImageUrl = (baseUrl: string, imageUrl: string): string => {
+	if (/^https?:\/\//i.test(imageUrl)) {
+		return imageUrl;
+	}
+
+	if (imageUrl.startsWith('/')) {
+		const url: URL = new URL(baseUrl);
+		return `${url.origin}${imageUrl}`;
+	}
+	return `${baseUrl}/${imageUrl}`;
+};
