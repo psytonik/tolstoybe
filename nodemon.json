@@ -4,3 +4,4 @@
   "ignore": ["src/**/*.spec.ts"],
   "exec": "ts-node --files ./src/app.ts"
 }
+
