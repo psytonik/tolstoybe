@@ -25,3 +25,4 @@ app.use('/',router);
 app.listen(PORT, (): void => {
 	console.log(`Server is running on port ${PORT}`);
 })
+export default app;
